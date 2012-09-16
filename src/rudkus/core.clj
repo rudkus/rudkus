@@ -26,7 +26,7 @@
 
 (defn -main [& args]
   (let [[options extra-args banner] (cli/cli args
-                                             ["-p" "--port" "Port" :default 80 :parse-fn #(Integer. %)])]
+                                             ["-p" "--port" "Port" :default 8080 :parse-fn #(Integer. %)])]
     (if (not-empty extra-args)
       (println banner)
       (start (:port options)))))
